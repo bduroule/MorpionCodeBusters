@@ -1,0 +1,15 @@
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/bin/Debug/net6.0/MorpionCodeBusters
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/bin/Debug/net6.0/MorpionCodeBusters.deps.json
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/bin/Debug/net6.0/MorpionCodeBusters.runtimeconfig.json
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/bin/Debug/net6.0/MorpionCodeBusters.dll
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/bin/Debug/net6.0/MorpionCodeBusters.pdb
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.csproj.AssemblyReference.cache
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.GeneratedMSBuildEditorConfig.editorconfig
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.AssemblyInfoInputs.cache
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.AssemblyInfo.cs
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.csproj.CoreCompileInputs.cache
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.dll
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/refint/MorpionCodeBusters.dll
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.pdb
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/MorpionCodeBusters.genruntimeconfig.cache
+/Users/beduroule/Documents/Code/FormationMargo/MorpionCodeBusters/obj/Debug/net6.0/ref/MorpionCodeBusters.dll
