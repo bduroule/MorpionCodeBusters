@@ -6,12 +6,12 @@ namespace Morpion
 {
     class Program
     {
-        
-
         static void Main(string[] args)
         {
             char?[][] MorpionGrid = new char?[3][] {new char?[3] {null, null, null}, new char?[3] {null, null, null}, new char?[3] {null, null, null}};
             string[] inputs;
+            var OCord = new Cord(-1, -1);
+
             while (true)
             {
                 inputs = Console.ReadLine().Split(' ');
@@ -19,13 +19,13 @@ namespace Morpion
                     Console.WriteLine("invalid input, you have to enter: x y");
                     continue ;
                 }
-                Console.WriteLine(inputs.Length);
                 if (int.TryParse(inputs[0], out int x) && int.TryParse(inputs[1], out int y)) {
                     if (FellTab(MorpionGrid, x, y) == true)
                         MorpionGrid[x][y] = 'X';
-                    Console.WriteLine($"{x}, {y}");
-
-                    CheckWinCondition(MorpionGrid, null, 'X');
+                    if (CheckWinCondition(MorpionGrid, OCord, 'O'))
+                        MorpionGrid[OCord.x][OCord.y] = 'O';
+                    else if (CheckWinCondition(MorpionGrid, OCord, 'X'))
+                        MorpionGrid[OCord.x][OCord.y] = 'O';
                 }
 
                 PrintGrid(MorpionGrid);
@@ -44,6 +44,7 @@ namespace Morpion
                 }
                 Console.Write("\n");
             }
+            Console.Write("\n");
         }
 
         static bool FellTab(char?[][] Grid, int x, int y)
@@ -57,10 +58,41 @@ namespace Morpion
 
         static bool CheckWinCondition(char?[][] Grid, Cord cord, char Player) 
         {
+            int searchPlayerPosition = 0;
+            int searchEmptyPosition = 0;
+
             for (int i = 0; i < 2; i++) {
-                if (Grid[i].Where(e => e == Player).ToArray().Length == 2 && Array.FindIndex(Grid[i], ) != -1)
-                    Console.WriteLine("coucou ca marche");
+                if (Grid[i].Where(e => e == Player).ToArray().Length == 2 && Array.FindIndex(Grid[i], e => e == null) != -1) {
+                    cord.x = i;
+                    cord.y = Array.FindIndex(Grid[i], e => e == null);
+                    return true;
+                }
+                if (Grid.Where(e => e[i] == Player).ToArray().Length == 2 && Array.FindIndex(Grid, e => e[i] == null) != -1) {
+                    cord.x = Array.FindIndex(Grid, e => e[i] == null);
+                    cord.y = i;
+                    return true;
+                }
+
+                searchPlayerPosition = 2;
+                searchEmptyPosition = 2;
+                if (Grid.Where(x => x[searchPlayerPosition--] == Player).ToArray().Length == 2 && Array.FindIndex(Grid, x => x[searchEmptyPosition--] ==  null) != -1) {
+                    searchPlayerPosition = 2;
+                    cord.x = Array.FindIndex(Grid, x => x[searchPlayerPosition--] == null);
+                    cord.y = 2 - cord.x;
+                    Console.WriteLine("here 1");
+                    return true;
+                } 
+                searchPlayerPosition = 0;
+                searchEmptyPosition = 0;
+                if (Grid.Where(x => x[searchPlayerPosition++] == Player).ToArray().Length == 2 && Array.FindIndex(Grid, x => x[searchEmptyPosition++] == null) != -1) {
+                    searchPlayerPosition = 0;
+                    cord.x = Array.FindIndex(Grid, x => x[searchPlayerPosition++] == null);
+                    cord.y = cord.x;
+                    Console.WriteLine("here 2");
+                    return true;
+                } 
             }
+
             return false;
         }
     }

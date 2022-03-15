@@ -1,5 +1,11 @@
 public class Cord
 {
-    int x {get; set;}
-    int y {get; set;}
+    public Cord(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int x {get; set;}
+    public int y {get; set;}
 }
